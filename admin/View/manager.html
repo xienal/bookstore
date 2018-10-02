@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>管理员登录页面</title>
+		 <link rel="stylesheet" href="../../css/managers.css">
+	<body>
+	<h1>欢迎管理员登录</h1>
+	
+	
+		<form method="post" action="/bookstore/admin/manager.php">
+		 <table>
+		   <tr><td>管理员名：</td><td><input type="text" name="managerName" /></td></tr>
+		   <tr><td>密        码：</td><td><input type="password" name="managerPsw" /></td></tr>
+		   <tr><td>验  证  码：</td><td><input type="text" name="captcha" /></td>
+		   <td><img src="/bookstore/admin/image/image.php" id="image_code"></td>
+		   <td><a href="#" id="change">看不清，换一张</a></td></tr>
+		  
+		
+		<tr><td><input type="submit" value="点击登录" class="button1"/></td>
+			<td><input type="reset" value="重新填写" class="button1"/></td>
+	  </tr>
+	   </table> 
+	  
+		</form>
+		
+		
+       
+    
+ <script>
+ 	var change=document.getElementById("change");
+ 	var img=document.getElementById("image_code");
+ 	change.onclick=function(){
+ 		img.src="/bookstore/admin/image/image.php";
+ 	}
+ 	
+ </script>
+	</body>

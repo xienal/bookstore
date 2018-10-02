@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户建议页面</title>
+		<style>
+			body{
+				background:url(../img/花花.jpg);
+			}
+			.background
+			{
+			    border-radius: 15%;
+				background-color: deeppink;
+				color: white;
+				font-size: 15px;
+				margin-top:50px ;
+				margin-left: 30px;
+				}
+				h2
+				{
+					text-align: center;
+					font-family: "微软雅黑";
+					font-size: 25px;
+					color: deeppink;
+				}
+				form
+				{
+					margin-left: 500px;
+				
+				}
+				input
+				{
+					padding: 8px 40px;
+					font-size: 15px;
+				}
+				tr{
+					height: 50px;
+				}
+				.suggestion1
+				{
+					overflow-y: scroll;
+				}
+		</style>
+	</head>
+	<body>
+		<h2>用户意见反馈</h2>
+		<form method="post" action="/bookstore/suggestion.php">
+		 <table>
+		 
+		   <tr><td>顾客账号：</td><td><input type="text" name="customerID"/></td></tr>
+		    <tr><td>意见反馈：</td><td><textarea rows="20"  cols="50" name="suggestion" class="suggestion1"></textarea>
+	
+		   <tr><td><input type="submit" value="提交意见" class="background"/></td>
+			<td><input type="reset"  value="重新填写" class="background"/></td></tr>
+		</table> 
+			
+			</form>
+			
+
+	</body>
+</html>

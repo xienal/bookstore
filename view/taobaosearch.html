@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		
+		body
+		{
+			background-image:url(./img/铁塔.jpg);
+			margin-left: 250px;
+			margin-top: 50px;
+		}
+		table
+		{
+			background-color:aliceblue;
+
+		}
+		h1{
+			color: palevioletred;
+		}
+		
+	</style>
+	<h1>用户搜索页面</h1>
+	<body>
+		<table border="1px">
+			<!--mysqli_fetch_assoc()：获取一行结果，并以关联数组返回-->
+         <tr>		
+         	<td>书本号：</td><td>书本名：</td><td>品牌:</td><td>价格：</td><td>种类：</td><td>是否打折：</td><td>图片：</td><td>用户操作：</td></tr>
+		<?php while($row=mysqli_fetch_assoc($result)) :?>
+			<tr>
+				<td>
+					<?=$row['bookID']?>
+				</td>
+				<td>
+					<?=$row['bookName']?>
+				</td>
+				<td>
+					<?=$row['brand']?>
+				</td>
+				
+				<td>
+					<?=$row['price']?>
+				</td>
+				<td>
+					<?=$row['kind']?>
+				</td>
+				
+				<td>
+					<?=$row['discount']?>
+				</td>
+				<td>
+				<img src="<?=$row['photo']?>">
+				</td>
+				
+				<td><a href="/bookstore/buy.php?id=<?=$row['bookID'] ?>">购买</a></td>
+				<td><a href="/bookstore/buy.php?id=<?=$row['bookID'] ?>">加入购物车</a></td>
+			</tr>
+			
+			<?php endwhile;?>
+		
+			
+			</table>
+			
+	</body>
+</html>

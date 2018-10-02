@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册页面</title>
+		<style>
+			body{
+				background:url(../img/花花.jpg);
+			}
+			.background
+			{
+			    border-radius: 15%;
+				background-color: deeppink;
+				color: white;
+				font-size: 15px;
+				margin-top:50px ;
+				margin-left: 30px;
+				}
+				h2
+				{
+					text-align: center;
+					font-family: "微软雅黑";
+					font-size: 25px;
+					color: deeppink;
+				}
+				form
+				{
+					margin-left: 500px;
+				
+				}
+				input
+				{
+					padding: 8px 40px;
+					font-size: 15px;
+				}
+				tr{
+					height: 50px;
+				}
+				.msg1
+				{
+					color: red;
+				}
+		</style>
+	</head>
+	<body>
+		<h2>欢迎注册新用户</h2>
+		<form method="post" action="/bookstore/register.php">
+		 <table>
+		 	
+		 	<tr><td>用户名：</td><td><input type="text" id="customerName" name="customerName"/>
+		 	<label id="msg" class="msg1"></label></td></tr>
+		   <tr><td>收件人：</td><td><input type="text" name="realName"/></td></tr>
+		   <tr><td>密  码：</td><td><input type="password" name="password"/></td></tr>
+		   <tr><td>联系电话：</td><td><input type="text" name="phoneNum"/></td></tr>
+		   <tr><td>地  址：</td><td><input type="text" name="address"/></td></tr>
+		   <tr><td>邮  箱：</td><td><input type="email" name="email"/></td></tr>
+		    <tr><td>注册时间：</td><td><input type="text" name="time" value="<?=date('Y-m-d H:i:s')?>"/></td></tr>
+		  
+	
+		  <!--<tr><td>用户名：</td><td><input type="text" name="customerName" /></td></tr>
+		   <tr><td>密  码：</td><td><input type="password" name="password" /></td></tr>
+		  <tr><td>确认密码：</td><td><input type="password" name="password"/></td></tr>
+		   <tr><td>邮  箱：</td><td><input type="email" name="email" /></td></tr>
+		   <tr><td>真实姓名：</td><td><input type="text" name="realName"/></td></tr>
+		   <tr><td>联系电话：</td><td><input type="text" name="phoneNum"/></td></tr>
+		   
+		   <tr><td>地址：</td><td><input type="text" name="address"/></td></tr>-->
+		   <tr><td><input type="submit" value="提交注册" class="background"/></td>
+			<td><input type="reset"  value="重新填写" class="background"/></td></tr>
+		</table>
+			<!--<input type="submit" value="提交注册" class="background"/>
+			<input type="reset"  value="重新填写" class="background"/>-->
+			</form>
+			
+
+	</body>
+	<script type="text/javascript" src="./js/jquery.js" ></script>
+	<script type="text/javascript" src="./js/jquery.datetimepicker.js" ></script>
+	<script language="JavaScript">
+    var customerName = document.getElementById('customerName');
+    var msg = document.getElementById('msg');
+    customerName.onblur = function () {
+        if (this.value === '') {
+            msg.innerHTML = '用户名不能为空';
+            return false;
+        }
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState===XMLHttpRequest.DONE&&xhr.status===200){
+                var data=xhr.responseText;
+                if (data === '1') {
+                    msg.innerHTML = '该用户名已经被占用了！';
+                }else{
+                    msg.innerHTML = '该用户名可用！';
+                }
+            }
+        };
+        xhr.open('POST','./Checkuser.php?customerName=' + encodeURIComponent(customerName.value));
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send('customerName=' + encodeURIComponent(customerName.value));
+    };
+</script>
+
+
+
+
+</html>

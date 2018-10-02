@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>书本修改页面</title>
+		<style>
+			body{
+				background:url(./../img/铁塔.jpg);
+			}
+			.background
+			{
+			    border-radius: 15%;
+				background-color: blueviolet;
+				color: white;
+				font-size: 15px;
+				margin-top:50px ;
+				margin-left: 30px;
+				}
+				h2
+				{
+					text-align: center;
+					font-family: "微软雅黑";
+					font-size: 25px;
+					color: palevioletred;
+				}
+				form
+				{
+					margin-left: 500px;
+				
+				}
+				
+				input
+				{
+					padding: 8px 40px;
+					font-size: 15px;
+				}
+				tr{
+					height: 50px;
+				}
+		</style>
+	</head>
+	<body>
+		<h2>图书信息管理</h2>
+		 	 <form method="post" action="#">
+		 	<table>
+			<tr><td>图书名：</td><td><input type="text" name="bookName" value="<?=$row['bookName']?>"/></td></tr>
+		    <tr><td>图书出版社：</td><td><input type="text" name="brand" value="<?=$row['brand']?>"/></td></tr>
+		   <tr><td>图书编号：</td><td><input type="text" name="bookNum" value="<?=$row['bookNum']?>"/></td></tr>
+		   <tr><td>价格：</td><td><input type="text" name="price" value="<?=$row['price']?>"/></td></tr>
+		   <tr><td>种类：</td><td><input type="text" name="kind" value="<?=$row['kind']?>"/></td></tr>
+		   <tr><td>是否打折：</td><td><input type="text" name="discount" value="<?=$row['discount']?>"/></td></tr>
+		    <tr><td>上传图片：</td><td><input type="text" name="photo" value="<?=$row['photo']?>"/></td></tr>
+		    <tr><td><input type="submit" value="加入购物车" class="background"/></td></tr>
+			
+		    </table> 
+		 </form>  
+		    
+</html>

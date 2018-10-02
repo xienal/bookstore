@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		
+		body
+		{
+			background-image:url(./../img/长颈鹿.jpg);
+			margin-left: 200px;
+			margin-top: 50px;
+		}
+		table
+		{
+			background-color:aliceblue;
+
+		}
+		
+	</style>
+	<body>
+		<table border="1px">
+			<!--mysqli_fetch_assoc()：获取一行结果，并以关联数组返回-->
+         <tr>		
+         	<td>用户编号：</td><td>用户名：</td><td>收件人:</td><td>密码：</td><td>联系方式：</td><td>地址：</td><td>电子邮件：</td><td>注册日期：</td><td colspan="2">管理员操作：</td></tr>
+		<?php while($row=mysqli_fetch_assoc($result)) :?>
+			<tr>
+				<td>
+					<?=$row['customerID']?>
+				</td>
+				<td>
+					<?=$row['customerName'] ?>
+				</td>
+				<td>
+					<?=$row['realName'] ?>
+				</td>
+				<td>
+					<?=$row['password'] ?>
+				</td>
+				<td>
+					<?=$row['phoneNum'] ?>
+				</td>
+				<td>
+					<?=$row['address'] ?>
+				</td>
+				
+				<td>
+					<?=$row['email'] ?>
+				</td>
+				
+				<td>
+					<?=$row['time'] ?>
+				</td>
+				
+				
+				<td><a href="user_update.php?id=<?=$row['customerID'] ?>">修改</a></td>
+				<td><a href="user_delete.php?id=<?=$row['customerID'] ?>" onclick="return confirm('确认删除?')">删除</a></td>
+			</tr>
+			
+			<?php endwhile;?>
+			<!--<?php foreach($row as $k=>$value):?>
+			  	
+			 <tr>
+			 	<?php foreach($value as $k1=>$v):?>
+			 		<?php if($k1!=0) :?>
+			 			<td><?=$v?></td>
+			 		<?php endif;?>
+			 		<?php endforeach;?>
+			 			<td><a href="user_update.php ?id=<?=$row['customerID'] ?>">修改</a></td>
+			 			<td><a href="user_delete.php ?id=<?=$row['customerID'] ?>">删除</a></td>
+			 </tr>
+			 <?php endforeach;?>
+			 -->
+				<?php if($page>1):?>
+					<a href="./manageroperate.php?p=1">首页</a>
+				    <a href="./manageroperate.php?p=<?=($page-1)?>">上一页</a>
+				<?php endif;?>
+					
+				<?php if($page<$totalPage):?>
+					<a href="./manageroperate.php?p=<?=($page+1) ?>">下一页</a>
+				    <a href="./manageroperate.php?p=<?=$totalPage ?>">尾页</a>
+				<?php endif;?>
+					
+					<span>共<?=$row2[0]; ?>条记录，当前第<?=$page ?>页,共<?=$totalPage?>页</span>
+					<form name="banner" method="get" action="/bookstore/admin/manageroperate.php">
+						到<input type="text" size="2" name="p" />
+						<input type="submit" value="确定" />
+					</form>
+						<button><a href="main.php">返回</a></button>
+			</table>
+			
+	</body>
+</html>

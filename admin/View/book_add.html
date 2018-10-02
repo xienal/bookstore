@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>上新页面</title>
+		<style>
+			body{
+				background:url(../../img/花花.jpg);
+			}
+			.background
+			{
+			    border-radius: 15%;
+				background-color: deeppink;
+				color: white;
+				font-size: 15px;
+				margin-top:50px ;
+				margin-left: 30px;
+				}
+				h2
+				{
+					text-align: center;
+					font-family: "微软雅黑";
+					font-size: 25px;
+					color: deeppink;
+				}
+				form
+				{
+					margin-left: 500px;
+				
+				}
+				input
+				{
+					padding: 8px 40px;
+					font-size: 15px;
+				}
+				tr{
+					height: 50px;
+				}
+		</style>
+	</head>
+	<body>
+		<h2>欢迎添加新的图书</h2>
+		  
+		   	<!--//MAX_FILE_SIZE限制上传文件的大小
+	//accept="image/jpeg,image/gif,image/png"在客户端限制图片的类型-->
+	<form action="/bookstore/admin/book_add.php" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="MAX_FILE_SIZE" value='176942' >
+		请选择您要上传的图片：
+		<input type="file" name="myfile" accept="image/jpeg,image/gif,image/png"/>
+	
+	
+		 <table>
+		 	
+		 	<tr><td>图书名：</td><td><input type="text" name="bookName"/></td></tr>
+		   <tr><td>出版社：</td><td><input type="text" name="brand"/></td></tr>
+		   <tr><td>图书编号：</td><td><input type="text" name="bookNum"/></td></tr>
+		   <tr><td>价格：</td><td><input type="text" name="price"/></td></tr>
+		   <tr><td>种类：</td><td><input type="text" name="kind"/></td></tr>
+		   <tr><td>是否打折：</td><td><input type="text" name="discount"/></td></tr>
+		 
+		 
+</body>
+	
+		   <tr><td><input type="submit" value="提交信息" class="background"/></td>
+			<td><input type="reset"  value="重新填写" class="background"/></td></tr>
+		</table> 
+	
+			</form>
+			
+			
+
+	</body>
+</html>

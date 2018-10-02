@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户注册页面</title>
+		<style>
+			body{
+				background:url(./../img/铁塔.jpg);
+			}
+			.background
+			{
+			    border-radius: 15%;
+				background-color: blueviolet;
+				color: white;
+				font-size: 15px;
+				margin-top:50px ;
+				margin-left: 30px;
+				}
+				h2
+				{
+					text-align: center;
+					font-family: "微软雅黑";
+					font-size: 25px;
+					color: palevioletred;
+				}
+				form
+				{
+					margin-left: 500px;
+				
+				}
+				
+				input
+				{
+					padding: 8px 40px;
+					font-size: 15px;
+				}
+				tr{
+					height: 50px;
+				}
+		</style>
+	</head>
+	<body>
+		<h2>会员信息管理</h2>
+		 	 <form method="post" action="#">
+		 	<table>
+		 		
+		   <tr><td>用户名：</td><td><input type="text" name="customerName" value="<?=$row['customerName']?>"/></td></tr>
+		   <tr><td>收件人：</td><td><input type="text" name="realName" value="<?=$row['realName']?>"/></td></tr>
+		   <tr><td>密  码：</td><td><input type="password" name="password" value="<?=$row['password']?>"/></td></tr>
+		   <tr><td>联系电话：</td><td><input type="text" name="phoneNum" value="<?=$row['phoneNum']?>"/></td></tr>
+		   <tr><td>地  址：</td><td><input type="text" name="address" value="<?=$row['address']?>"/></td></tr>
+		   <tr><td>邮  箱：</td><td><input type="email" name="email"  value="<?=$row['email']?>"/></td></tr>
+		    <tr><td>下单时间：</td><td><input type="text" name="time" value="<?=date('Y-m-d H:i:s')?>"/></td></tr>
+		    <tr><td><input type="submit" value="确认修改" class="background"/></td></tr>
+			
+		    </table> 
+		 </form>  
+		    
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		
+		body
+		{
+			margin-left: 420px;
+			margin-top: 50px;
+			background-image:url(./../img/长颈鹿.jpg);
+		}
+		table
+		{
+			background-color:aliceblue;
+
+		}
+		
+	</style>
+	<body>
+		<table border="1px">
+			<!--mysqli_fetch_assoc()：获取一行结果，并以关联数组返回-->
+         <tr>		
+         	<td>管理员编号：</td><td>管理员名：</td><td>密码：</td><td colspan="2">管理员操作：</td></tr>
+		<?php while($row=mysqli_fetch_assoc($result)) : ?> <!--替代语法  ：代替左花括号    endif; endwhile;等等代替右花括号，为了区分流程语句的开始和结束位置-->
+				
+			<tr>
+				<td>
+					<?=$row['managerID']?><!--短标记输出语法，在HTML嵌入PHP变量使用 -->
+				</td>
+				<td>
+					<?=$row['managerName'] ?>
+				</td>
+				<td>
+					<?=$row['managerPsw'] ?>
+				</td>
+				
+				<td><a href="manager_update.php?id=<?=$row['managerID'] ?>">修改</a></td>
+				<td><a href="manager_delete.php?id=<?=$row['managerID'] ?>" onclick="return confirm('确认删除?')">删除</a></td>
+			</tr>
+			
+			<?php endwhile;?>
+			
+			
+			
+				<?php if($page>1):?>
+					<a href="./adminoperate.php?p=1">首页</a>
+				    <a href="./adminoperate.php?p=<?=($page-1)?>">上一页</a>
+				<?php endif;?>
+					
+				<?php if($page<$totalPage):?>
+					<a href="./adminoperate.php?p=<?=($page+1) ?>">下一页</a>
+				    <a href="./adminoperate.php?p=<?=$totalPage ?>">尾页</a>
+				<?php endif;?>
+					
+					<span>共<?=$row2[0]; ?>条记录，当前第<?=$page ?>页,共<?=$totalPage?>页</span>
+					<form name="banner" method="get" action="/bookstore/admin/adminoperate.php">
+						到<input type="text" size="2" name="p" />
+						<input type="submit" value="确定" />
+					</form>
+						<button><a href="main.php">返回</a></button>
+			</table>
+			
+			
+	</body>
+</html>

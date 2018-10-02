@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		
+		body
+		{
+			margin-left: 50px;
+			margin-top: 50px;
+			background-image:url(./../img/长颈鹿.jpg);
+		}
+		table
+		{
+			background-color:aliceblue;
+
+		}
+		
+	</style>
+	<body>
+		<table border="1px">
+			<!--mysqli_fetch_assoc()：获取一行结果，并以关联数组返回-->
+         <tr>		
+         	<td>订单编号：</td><td>顾客编号：</td><td>图书编号：</td><td>图书名称:</td><td>图书出版社：</td><td>下单时间：</td><td>购买数量：</td><td>价格：</td><td>种类：</td><td>用户快递选择：</td><td>图片：</td><td colspan="2">管理员操作：</td>
+         </tr>
+		<?php while($row=mysqli_fetch_assoc($result)) :?>
+			<tr>
+				<td>
+					<?=$row['orderID']?>
+				</td>
+				
+				<td>
+					<?=$row['customerID'] ?>
+				</td>
+				<td>
+					<?=$row['bookID'] ?>
+				</td>
+				
+				<td>
+					<?=$row['bookName'] ?>
+				</td>
+				
+				<td>
+					<?=$row['brand'] ?>
+				</td>
+				
+				<td>
+					<?=$row['time'] ?>
+				</td>
+				
+				<td>
+					<?=$row['sale'] ?>
+				</td>
+				<td>
+					<?=$row['price'] ?>
+				</td>
+				
+				<td>
+					<?=$row['kind'] ?>
+				</td>
+				<td>
+					<?=$row['delivery'] ?>
+				</td>
+				
+				<td>
+				<img src="<?=$row['photo']?>">
+				</td>
+				
+				<td><a href="order_update.php?id=<?=$row['orderID'] ?>">修改</a></td>
+				<td><a href="order_delete.php?id=<?=$row['orderID'] ?>" onclick="return confirm('确认删除?')">删除</a></td>
+			</tr>
+			
+			<?php endwhile;?>
+			
+				<?php if($page>1):?>
+					<a href="./orderoperate.php?p=1">首页</a>
+				    <a href="./orderoperate.php?p=<?=($page-1)?>">上一页</a>
+				<?php endif;?>
+					
+				<?php if($page<$totalPage):?>
+					<a href="./orderoperate.php?p=<?=($page+1)?>">下一页</a>
+				    <a href="./orderoperate.php?p=<?=$totalPage?>">尾页</a>
+				<?php endif;?>
+					
+					<span>共<?=$row2[0]; ?>条记录，当前第<?=$page ?>页,共<?=$totalPage?>页</span>
+					<form name="banner" method="get" action="/bookstore/admin/orderoperate.php">
+						到<input type="text" size="2" name="p" />
+						<input type="submit" value="确定" />
+					</form>
+						<button><a href="main.php">返回</a></button>
+			</table>
+			
+	</body>
+</html>

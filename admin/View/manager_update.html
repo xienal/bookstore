@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>管理员信息更新页面</title>
+		<style>
+			body{
+				background:url(./../img/铁塔.jpg);
+			}
+			.background
+			{
+			    border-radius: 15%;
+				background-color: blueviolet;
+				color: white;
+				font-size: 15px;
+				margin-top:50px ;
+				margin-left: 30px;
+				}
+				h2
+				{
+					text-align: center;
+					font-family: "微软雅黑";
+					font-size: 25px;
+					color: palevioletred;
+				}
+				form
+				{
+					margin-left: 500px;
+				
+				}
+				
+				input
+				{
+					padding: 8px 40px;
+					font-size: 15px;
+				}
+				tr{
+					height: 50px;
+				}
+		</style>
+	</head>
+	<body>
+		<h2>管理员信息更新管理</h2>
+		 	 <form method="post" action="#">
+		 	<table>
+		 		
+	       <tr><td>管理员名：</td><td><input type="text" name="managerName" value="<?=$row['managerName']?>"/></td></tr>
+		   <tr><td>密  码：</td><td><input type="password" name="managerPsw" value="<?=$row['managerPsw']?>"/></td></tr>
+		    <tr><td><input type="submit" value="确认修改" class="background"/></td></tr>
+			
+		    </table> 
+		 </form>  
+		    
+</html>

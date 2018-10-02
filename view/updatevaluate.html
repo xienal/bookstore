@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户修改页面</title>
+		<style>
+			body{
+				background:url(./img/铁塔.jpg);
+			}
+			.background
+			{
+			    border-radius: 15%;
+				background-color: blueviolet;
+				color: white;
+				font-size: 15px;
+				margin-top:50px ;
+				margin-left: 30px;
+				}
+				h2
+				{
+					text-align: center;
+					font-family: "微软雅黑";
+					font-size: 25px;
+					color: palevioletred;
+				}
+				form
+				{
+					margin-left: 500px;
+				
+				}
+				
+				input
+				{
+					padding: 8px 40px;
+					font-size: 15px;
+				}
+				tr{
+					height: 50px;
+				}
+				
+		</style>
+	</head>
+	<body>
+		<h2>用户修改评价页面</h2>
+		<table>
+		 	 <form method="post" action="#">
+		 	
+		   <tr><td>图书编号：</td><td><input type="text" name="bookID" value="<?=$row['bookID']?>"/></td></tr>
+		    <tr><td>用户编号：</td><td><input type="text" name="customerID" value="<?=$row['customerID']?>"/></td></tr>
+		    <tr><td>图书名称：</td><td><input type="text" name="bookName" value="<?=$row['bookName']?>"/></td></tr>
+             <tr><td>用户名称：</td><td><input type="text" name="customerName" value="<?=$row['customerName']?>"/></td></tr>
+		     <tr><td>用户评价：</td><td><textarea rows="20"  cols="50" name="evaluate" class="suggestion1" value="<?=$row['evaluate']?>"></textarea>
+			   <tr><td><input type="submit" value="确认修改" class="background"/></td></tr>
+		    
+		 </form>  
+		    </table> 
+</html>

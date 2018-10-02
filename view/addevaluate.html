@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>评论页面</title>
+		<style>
+			body{
+				background:url(../img/铁塔.jpg);
+			}
+			.background
+			{
+			    border-radius: 15%;
+				background-color: deeppink;
+				color: white;
+				font-size: 15px;
+				margin-top:50px ;
+				margin-left: 30px;
+				}
+				h2
+				{
+					text-align: center;
+					font-family: "微软雅黑";
+					font-size: 25px;
+					color: deeppink;
+				}
+				form
+				{
+					margin-left: 500px;
+				
+				}
+				input
+				{
+					padding: 8px 40px;
+					font-size: 15px;
+				}
+				tr{
+					height: 50px;
+				}
+				.suggestion1
+				{
+					overflow-y: scroll;
+				}
+		</style>
+	</head>
+	<body>
+		<h2>欢迎用户评价</h2>
+		  
+		 <table>
+		 	
+		 	 <form action="/bookstore/addevaluate.php" method="post" enctype="multipart/form-data">
+		   <tr><td>书本编号：</td><td><input type="text" name="bookID"/></td></tr>
+		    <tr><td>用户编号：</td><td><input type="text" name="customerID"/></td></tr>
+		    <tr><td>书本名称：</td><td><input type="text" name="bookName"/></td></tr>
+             <tr><td>用户名称：</td><td><input type="text" name="customerName"/></td></tr>
+		     <tr><td>用户评价：</td><td><textarea rows="20"  cols="50" name="evaluate" class="suggestion1"></textarea>
+	
+		 
+</body>
+	
+		   <tr><td><input type="submit" value="提交信息" class="background"/></td>
+			<td><input type="reset"  value="重新填写" class="background"/></td></tr>
+		</table> 
+	
+			</form>
+			
+			
+
+	</body>
+</html>

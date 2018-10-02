@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>书城网站管理后台</title>
+	</head>
+	<style>
+	
+	a{
+		text-decoration: none;
+		color:white;
+		background-color: plum;
+		font-size: 22px;
+	}	
+	a:hover
+	{
+		background: pink;
+	}
+	</style>
+	
+	<div>
+			您好,<?=$name?>管理员
+	</div>
+	
+	<body style="margin: 0px 0px 0px 0px; background:url(./../img/瓶子.jpg);"><br  />
+		<table style="width:100%;border-collapse: collapse;">
+			<tr></tr><tr></tr><tr></tr>
+			<tr><td colspan="2" style="text-align:center; font-size: 69px;color: palevioletred;">书城网站管理后台</td></tr>
+			<tr><td colspan="2"></td></tr>
+			<tr><td width="100px" valign="top" >
+				<a href="/bookstore/admin/manageroperate.php" target="mainframe">会员信息管理</a>
+				<a href="/bookstore/admin/adminoperate.php" target="mainframe">管理员信息管理</a>
+				<a href="/bookstore/admin/bookoperate.php" target="mainframe">图书信息管理</a>
+				<a href="/bookstore/admin/orderoperate.php" target="mainframe">订单信息管理</a>
+				<a href="/bookstore/admin/evaluateoperate.php" target="mainframe">用户评论信息</a>
+				<a href="/bookstore/admin/View/manager_add.html" target="mainframe">添加管理员信息</a>
+			    <a href="/bookstore/admin/cusuggestion.php" target="mainframe">用户意见反馈</a>	
+				<a href="/bookstore/admin/View/book_add.html" target="mainframe">图书上新</a>	
+				<a href="/bookstore/admin/View/book_delete.html" target="mainframe">图书下架</a>	
+				<a href="/bookstore/Loginout.php" target="mainframe">退出后台</a>
+				<a href="/bookstore/admin/View/updatepassword.html" target="mainframe">修改密码</a>
+			</td></tr>
+		</table>
+		
+	</body>
+</html>

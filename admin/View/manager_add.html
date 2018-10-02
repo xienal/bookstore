@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册页面</title>
+		<style>
+			body{
+				background:url(../../img/长颈鹿.jpg);
+			}
+			.background
+			{
+			    border-radius: 15%;
+				background-color: deeppink;
+				color: white;
+				font-size: 15px;
+				margin-top:50px ;
+				margin-left: 30px;
+				}
+				h2
+				{
+					text-align: center;
+					font-family: "微软雅黑";
+					font-size: 25px;
+					color: deeppink;
+				}
+				form
+				{
+					margin-left: 500px;
+				
+				}
+				input
+				{
+					padding: 8px 40px;
+					font-size: 15px;
+				}
+				tr{
+					height: 50px;
+				}
+		</style>
+	</head>
+	<body>
+		<h2>欢迎注册新管理员</h2>
+		<form method="post" action="/bookstore/admin/manager_add.php">
+		 <table>
+		 	
+		 	<tr><td>管理员名：</td><td><input type="text" name="managerName"/></td></tr>
+		    <tr><td>密        码：</td><td><input type="password" name="managerPsw"/></td></tr>
+		   <tr><td><input type="submit" value="提交注册" class="background"/></td>
+			<td><input type="reset"  value="重新填写" class="background"/></td></tr>
+		</table> 
+			<!--<input type="submit" value="提交注册" class="background"/>
+			<input type="reset"  value="重新填写" class="background"/>-->
+			</form>
+			
+
+	</body>
+</html>

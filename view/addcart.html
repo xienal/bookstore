@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>加入购物车页面</title>
+		<style>
+			body{
+				background:url(../img/铁塔.jpg);
+			}
+			.background
+			{
+			    border-radius: 15%;
+				background-color: blueviolet;
+				color: white;
+				font-size: 15px;
+				margin-top:50px ;
+				margin-left: 30px;
+				}
+				h2
+				{
+					text-align: center;
+					font-family: "微软雅黑";
+					font-size: 25px;
+					color: palevioletred;
+				}
+				form
+				{
+					margin-left: 500px;
+				
+				}
+				
+				input
+				{
+					padding: 8px 40px;
+					font-size: 15px;
+				}
+				tr{
+					height: 50px;
+				}
+		</style>
+	</head>
+	<body>
+		<h2>我的购物车</h2>
+		 <form action="/bookstore/addcart.php" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="MAX_FILE_SIZE" value='176942' >
+		请选择您要上传的图片：
+		<input type="file" name="myfile" accept="image/jpeg,image/gif,image/png"/>
+		 	<table>
+		 		
+	   
+		  
+		   <tr><td>顾客编号：</td><td><input type="text" name="customerID"/></td></tr>
+		   <tr><td>图书编号：</td><td><input type="text" name="bookID"/></td></tr>
+		   <tr><td>图书名称：</td><td><input type="text" name="bookName"/></td></tr>
+		   <tr><td>图书出版社：</td><td><input type="text" name="brand" /></td></tr>
+		    <tr><td>下单时间  ：</td><td><input type="date" name="time" /></td></tr>
+		   <tr><td>购买数量  ：</td><td><input type="text" name="sale"/></td></tr>
+		   <tr><td>图书价格：</td><td><input type="text" name="price" /></td></tr>
+		   <tr><td>图书种类：</td><td><input type="text" name="kind" /></td></tr>
+		   <tr><td>快递选择：</td><td><input type="radio" name="delivery" value="圆通快递"/>圆通快递</input>
+		  <input type="radio" name="delivery" value="申通快递"/>申通快递</input>
+		   <input type="radio" name="delivery" value="邮政快递"/>邮政快递</input></td></tr>
+		    <tr><td></td><td><input type="radio" name="delivery" value="韵达快递"/>韵达快递</input>
+		    <input type="radio" name="delivery" value="百世快递"/>百世快递</input>
+		     <input type="radio" name="delivery" value="顺丰快递"/>顺丰快递</input></td></tr>
+		   
+		    <tr><td><input type="submit" value="加入购物车" class="background"/></td></tr>
+			
+		    </table> 
+		 </form>  
+		    
+</html>

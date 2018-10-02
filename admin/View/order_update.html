@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>订单修改页面</title>
+		<style>
+			body{
+				background:url(./../img/t014fe6f3e53ea632f8.jpg);
+			}
+			.background
+			{
+			    border-radius: 15%;
+				background-color: blueviolet;
+				color: white;
+				font-size: 15px;
+				margin-top:50px ;
+				margin-left: 30px;
+				}
+				h2
+				{
+					text-align: center;
+					font-family: "微软雅黑";
+					font-size: 25px;
+					color: palevioletred;
+				}
+				
+				input
+				{
+					padding: 8px 40px;
+					font-size: 15px;
+				}
+				tr{
+					height: 50px;
+				}
+		</style>
+	</head>
+	<body>
+		<h2>订单信息管理</h2>
+		 	 <form method="post" action="#">
+		 	<table>
+		 		
+	       <tr><td>图书编号：</td><td><input type="text" name="bookID" value="<?=$row['bookID']?>"/></td></tr>
+		   <tr><td>顾客编号：</td><td><input type="text" name="customerID" value="<?=$row['customerID']?>"/></td></tr>
+		   <tr><td>图书名称：</td><td><input type="text" name="bookName" value="<?=$row['bookName']?>"/></td></tr>
+		   <tr><td>图书出版社：</td><td><input type="text" name="brand" value="<?=$row['brand']?>"/></td></tr>
+		    <tr><td>下单时间：</td><td><input type="text" name="time" value="<?=$row['time']?>"/></td></tr>
+		    <tr><td>下单数量：</td><td><input type="text" name="sale"  value="<?=$row['sale']?>"/></td></tr>
+		     <tr><td>图书价格：</td><td><input type="text" name="price" value="<?=$row['price']?>"/></td></tr>
+		    <tr><td>图书种类：</td><td><input type="text" name="kind"  value="<?=$row['kind']?>"/></td></tr>
+		   <tr><td>快递选择：</td><td><input type="radio" name="delivery"  value="<?=$row['delivery']?>"/>圆通快递</input>
+		  <input type="radio" name="delivery" value="申通快递"/>申通快递</input>
+		   <input type="radio" name="delivery" value="邮政快递"/>邮政快递</input></td></tr>
+		    <tr><td></td><td><input type="radio" name="delivery" value="韵达快递"/>韵达快递</input>
+		    <input type="radio" name="delivery" value="百世快递"/>百世快递</input>
+		     <input type="radio" name="delivery" value="顺丰快递"/>顺丰快递</input></td></tr>
+		     <tr><td>图书图片  ：</td><td><input type="text" name="photo" value="<?=$row['photo']?>"/></td></tr>
+		    <tr><td><input type="submit" value="确认修改" class="background"/></td></tr>
+			
+		    </table> 
+		 </form>  
+		    
+</html>

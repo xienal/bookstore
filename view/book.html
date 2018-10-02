@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style>
+		body{
+			width: 99%;
+		}
+		header
+		{
+			height: 120px;
+			background:url(./img/兰花.jpg) ;
+		}
+		
+		span{
+			
+			font-family: "arial black";
+			text-align: center;
+			font-size:30px ;
+			margin-left: 495px;
+			line-height:110px;
+		    color: mediumpurple;
+			}
+		   table{
+				float: right;
+				margin-top: 85px;
+			}
+			.table1{
+			     float: left;
+				margin-top: 85px;
+				
+			}
+			
+			td a
+			{
+				text-decoration: none;
+				 color: mediumpurple;
+			}
+			td a:hover
+			{
+				color: palevioletred;
+			}
+			button
+			{
+				margin-left: 10px;
+				font-size:15px;
+				
+			}
+			.button1
+			{
+				margin-left: 48px;
+				margin-top: 60px;
+				font-size: 15px;
+			}
+			section
+			{
+				height: 180px;
+				background-image: url(./img/励志.jpg);
+			}
+			h4{
+				color: mediumpurple;
+				float: left;
+			}
+			h3{
+				float:right;
+				color: red;
+			}
+			
+			 h3 a{
+			 	text-decoration: none;
+			 }
+			 	
+			 img{
+			border-radius: 55%;
+		        }
+		
+		* { padding:0; margin:0;}       /*设置所有对像的内边距为0*/
+
+    #photo-list {
+           /* 6张图片的宽度（包含宽度、padding、border、图片间的留白）
+                        计算：6*(100+2*2+1*2+9) - 9 
+                      之所以减去9是第6张图片的右边留白 */
+                 width:93%;  
+         /* 图片的宽度（包含高度、padding、border）
+                       计算：100+2*2+1*2  */ 
+                height:150px;  
+                margin:50px auto; 
+                overflow:hidden;     /*溢出部份将被隐藏*/ 
+                border:1px dashed #ccc;  
+             }  
+           #photo-list ul 
+           {
+           	 list-style:none;
+           }  
+           #photo-list li 
+           { 
+           	float:left; padding-right:9px;
+           }  
+           #photo-list img
+            { 
+            	border:1px solid #ddd; background:#fff; padding:2px;
+            }
+
+			footer {
+			position: absolute;
+			top: 1000px;
+			width: 95%;
+			height: 35px;
+		}
+		
+		footer a {
+			margin-top: 1000px;
+			color: black;
+			text-decoration: none;
+			padding-left: 300px;
+			font-family: "微软雅黑";
+			font-size: 18px;
+	</style>
+	<body>
+		<div>
+		    	您好,<?=$name?>用户
+		  </div>
+
+		<header>
+			
+			<span>书中自有颜如玉</span>
+			<table>
+			<tr>
+				<td>
+					<button><a href="index.html">首页</a></button>
+				</td>
+		
+				<td>
+					<button><a href="/bookstore/view/rexiao.html">店铺活动</a></button>
+				</td>
+				
+				<td>
+					<button><a href="/bookstore/cart.php">我的购物车</a></button>
+				</td>
+				
+				<td>
+					<button><a href="/bookstore/ordero.php">我的订单</a></button>
+				</td>
+				<td>
+					<button><a href="/bookstore/user_evaluateoperate.php">我的评论</a></button>
+				</td>
+				
+				<td>
+					<button><a href="/bookstore/view/suggestion.html">意见反馈</a></button>
+				</td>
+				
+				<td>
+					<button><a href="/bookstore/view/updatepassword.html">修改密码</a></button>
+				</td>
+				
+				<td>
+					<button><a href="/bookstore/admin/View/manager.html">后台</a></button>
+				</td>
+				<td>
+					<button><a href="/bookstore/Loginout.php">退出</a></button>
+				</td>
+			</tr>
+			</table>
+		</header>
+		<hr />
+		
+		<table>
+		<form method="post" action="taobaosearch.php">
+		<input type="search"  name="search" placeholder="请输入关键字"> 
+		<a href="bookstore/taobaosearch.php"><button>搜索</button></a>
+		</table>
+		<hr />
+		
+		<section>
+			<table  class="table1">
+			<tr>
+				<td>
+					<button class="button1"><a href="/bookstore/zgxdwx.php">中国现代文学</a></button>
+				</td>
+					
+			    <td>
+					<button class="button1"><a href="/bookstore/zggdwx.php">中国古代文学</a></button>
+			    </td>
+		
+				<td>
+					<button class="button1"><a href="/bookstore/wgxdwx.php">外国现代文学</a></button>
+				</td>
+			
+			    <td>
+					<button class="button1"><a href="/bookstore/wggdwx.php">外国古代文学</a></button>
+			    </td>
+				
+				<td>
+					<button class="button1"><a href="/bookstore/social.php">社会、科学、经济、管理</a></button>
+				</td>
+				
+				<td>
+					<button class="button1"><a href="/bookstore/other.php">各种学习教材</a></button>
+				</td>
+				
+				<td>
+					<button class="button1"><a href="/bookstore/singsong.php">诗歌、词曲、戏剧</a></button>
+				</td>
+				<td>
+					<button class="button1"><a href="/bookstore/live.php">文艺、青春、生活</a></button>
+				</td>
+				
+			</tr>
+			</table>
+		</section>
+		<div>
+			<h4>中国现代文学</h4>
+			<h3><a href="/bookstore/zgxdwx.php">查看更多>></a></h3>
+		</div>
+		
+			<div id="photo-list"> 
+			<ul id="scroll">  
+			<p style="color: mediumpurple; text-align: center;">中国现代文学倾情推荐</p>
+<li><a href="/bookstore/admin/book_update.php?id=5"><img src="img/中国文学史.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=10"><img src="img/大鱼海棠.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=13"><img src="img/从你的全世界路过.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=15"><img src="img/归去来.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=19"><img src="img/芳华.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=16"><img src="img/南极绝恋.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=18"><img src="img/烟火人间.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=22"><img src="img/妖猫传.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=21"><img src="img/不成问题.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=20"><img src="img/浮生六记.jpg" width="100px" height="100px" alt=""/></a></li>  
+
+
+ </ul> 
+ <script type="text/javascript" src="图片滚动.js"></script>
+ </div>
+		
+		
+			<div>
+			<h4>中国古代文学</h4>
+			<h3><a href="/bookstore/zggdwx.php">查看更多>></a></h3>
+		</div>
+		
+			<div id="photo-list"> 
+			<ul id="scroll">  
+			<p style="color: mediumpurple; text-align: center;">中国古代文学倾情推荐</p>
+<li><a href="/bookstore/admin/book_update.php?id=1"><img src="img/红楼梦.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=23"><img src="img/四大名著.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=3"><img src="img/儒林外史.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=24"><img src="img/花间集.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=4"><img src="img/聊斋志异.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=1"><img src="img/红楼梦.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=23"><img src="img/四大名著.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=3"><img src="img/儒林外史.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=24"><img src="img/花间集.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=4"><img src="img/聊斋志异.jpg" width="100px" 
+
+
+ </ul> 
+ <script type="text/javascript" src="图片滚动.js"></script>
+ </div>
+			
+
+			<div>
+			<h4>文艺、青春、生活</h4>
+			<h3><a href="/bookstore/live.php">查看更多>></a></h3>
+		</div>
+		
+			<div id="photo-list"> 
+			<ul id="scroll">  
+			<p style="color: mediumpurple; text-align: center;">文艺、青春、生活倾情推荐</p>
+<li><a href="/bookstore/admin/book_update.php?id=10"><img src="img/大鱼海棠.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=13"><img src="img/从你的全世界路过.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=15"><img src="img/归去来.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=19"><img src="img/芳华.jpg" width="100px" height="100px" alt=""/></a></li>  
+ <li><a href="/bookstore/admin/book_update.php?id=16"><img src="img/南极绝恋.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=18"><img src="img/烟火人间.jpg" width="100px" height="100px" alt=""/></a></li>  
+<li><a href="/bookstore/admin/book_update.php?id=22"><img src="img/妖猫传.jpg" width="100px" height="100px" alt=""/></a></li>  
+ <li><a href="/bookstore/admin/book_update.php?id=25"><img src="img/罗生门.jpg" width="100px" height="100px" alt=""/></a></li>  
+ <li><a href="/bookstore/admin/book_update.php?id=11"><img src="img/call me name.jpg" width="100px" height="100px" alt=""/></a></li>  
+  <li><a href="/bookstore/admin/book_update.php?id=26"><img src="img/寻梦环游记.jpg" width="100px" height="100px" alt=""/></a></li>  
+
+ </ul> 
+ <script type="text/javascript" src="图片滚动.js"></script>
+ </div>
+		
+		
+		<footer>
+			<tr>
+				<td>
+					<a href="#">电脑版</a>
+				</td>
+				<td>
+					<a href="#">手机版</a>
+				</td>
+				<td>
+					<a href="#">APP</a>
+				</td>
+			</tr>
+		</footer>
+ <script>
+ 	 var id = function(el) 
+  {          
+  		return document.getElementById(el);        
+  },
+   c = id('photo-list');
+   if(c) 
+   {
+       var ul = id('scroll'),
+           lis = ul.getElementsByTagName('li'),
+           itemCount = lis.length,
+           width = lis[0].offsetWidth, //获得每个img容器的宽度
+           marquee = function() {
+               c.scrollLeft += 2;
+               if(c.scrollLeft % width <= 1){  //当 c.scrollLeft 和 width 相等时，把第一个img追加到最后面
+                   ul.appendChild(ul.getElementsByTagName('li')[0]);
+                   c.scrollLeft = 0;
+               };
+           },
+           speed = 800; //数值越大越慢
+       ul.style.width = width*itemCount + 'px'; //加载完后设置容器长度        
+       var timer = setInterval(marquee, speed);
+       c.onmouseover = function() {
+           clearInterval(timer);
+       };
+       c.onmouseout = function() {
+           timer = setInterval(marquee, speed);
+       };
+   };
+ </script>
+	</body>
+</html>

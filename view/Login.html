@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录页面</title>
+		 <link rel="stylesheet" href="../css/login.css">
+	<body>
+	<h1>欢迎用户登录</h1>
+	
+	
+		<form method="post" action="../login.php";>
+		 <table>
+		   <tr><td>用户名：</td><td><input type="text" name="user" /></td></tr>
+		   <tr><td>密   码：</td><td><input type="password" name="pwd" /></td></tr>
+		   <tr><td>验证码：</td><td><input type="text" name="captcha" /></td>
+		   <td><img src="../admin/image/image.php" id="image_code"></td>
+		   <td><a href="#" id="change">看不清，换一张</a></td></tr>
+		  
+		
+		<tr><td><input type="submit" value="点击登录" class="button1"/></td>
+	   <td><a href ="../register.php" ><input type="button"  value="没有账号？点击注册" class="button1"/></a></td></tr>
+	   </table> 
+		</form>
+
+ <script>
+ 	var change=document.getElementById("change");
+ 	var img=document.getElementById("image_code");
+ 	change.onclick=function(){
+ 		img.src="../admin/image/image.php";
+ 	}
+ 	
+ </script>
+	</body>
+</html>
